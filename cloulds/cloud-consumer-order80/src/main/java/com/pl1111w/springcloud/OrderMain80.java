@@ -1,11 +1,9 @@
 package com.pl1111w.springcloud;
 
-import com.sun.glass.ui.Application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-
-import javax.sql.DataSource;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @title: pl1111w
@@ -14,6 +12,7 @@ import javax.sql.DataSource;
  * @date 2021/1/7 21:32
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@EnableEurekaClient
 public class OrderMain80 {
 
     public static void main(String[] args) {
