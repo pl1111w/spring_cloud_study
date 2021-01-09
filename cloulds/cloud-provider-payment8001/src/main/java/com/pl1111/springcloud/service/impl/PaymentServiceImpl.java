@@ -1,8 +1,8 @@
 package com.pl1111.springcloud.service.impl;
 
 import com.pl1111.springcloud.dao.PaymentDao;
-import com.pl1111.springcloud.entity.Payment;
 import com.pl1111.springcloud.service.PaymentService;
+import com.pl1111w.springcloud.entity.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

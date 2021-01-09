@@ -1,8 +1,8 @@
 package com.pl1111.springcloud.controller;
 
-import com.pl1111.springcloud.entities.CommonResult;
-import com.pl1111.springcloud.entity.Payment;
 import com.pl1111.springcloud.service.PaymentService;
+import com.pl1111w.springcloud.entities.CommonResult;
+import com.pl1111w.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
