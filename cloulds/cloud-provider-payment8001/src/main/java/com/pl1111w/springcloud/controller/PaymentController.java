@@ -1,11 +1,15 @@
 package com.pl1111w.springcloud.controller;
 
-import com.pl1111w.springcloud.service.PaymentService;
 import com.pl1111w.springcloud.entities.CommonResult;
 import com.pl1111w.springcloud.entity.Payment;
+import com.pl1111w.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @title: pl1111w
@@ -20,6 +24,9 @@ public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    private EurekaDiscoveryClient eurekaDiscoveryClient;
 
     private static final String SERVER_PORT = "success";
 
@@ -44,5 +51,18 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录", null);
         }
+    }
+
+    @GetMapping("/discovery")
+    public Object discovery() {
+        List<String> services = eurekaDiscoveryClient.getServices();
+        for (String service : services) {
+            log.info("service:\t" + service);
+        }
+        List<ServiceInstance> instances = eurekaDiscoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+        }
+        return eurekaDiscoveryClient.description();
     }
 }
