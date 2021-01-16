@@ -5,6 +5,7 @@ import com.pl1111w.springcloud.entities.CommonResult;
 import com.pl1111w.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -21,6 +22,7 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
+    @Value("${server.port}")
     private static final String SERVER_PORT = "success";
 
     @PostMapping("/create")

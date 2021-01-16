@@ -5,6 +5,7 @@ import com.pl1111w.springcloud.entity.Payment;
 import com.pl1111w.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,7 @@ public class PaymentController {
     @Autowired
     private EurekaDiscoveryClient eurekaDiscoveryClient;
 
+    @Value("${server.port}")
     private static final String SERVER_PORT = "success";
 
     @PostMapping("/create")
@@ -36,7 +38,7 @@ public class PaymentController {
         log.info("插入数据的ID:\t" + payment.getId());
         log.info("插入结果：" + result);
         if (result > 0) {
-            return new CommonResult(200, "插入数据成功,serverport:" + SERVER_PORT, result);
+            return new CommonResult(200, "插入数据成功,serverPort:" + SERVER_PORT, result);
         } else {
             return new CommonResult(444, "插入数据失败", null);
         }
