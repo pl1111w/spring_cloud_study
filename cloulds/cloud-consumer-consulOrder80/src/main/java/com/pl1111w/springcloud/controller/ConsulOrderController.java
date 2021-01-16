@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 @RequestMapping("consumer/payment/")
 public class ConsulOrderController {
 
-    private static final String URL = "http://consul-provider-payment/";
+    private static final String URL = "http://consul-payment-service/";
 
     @Resource
     private RestTemplate restTemplate;

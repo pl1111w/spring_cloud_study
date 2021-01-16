@@ -5,15 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * @title: pl1111w
+ * @tile: pl1111w
  * @description: TODO
  * @author: Kris
- * @date 2021/1/13 22:41
+ * @date 2021/1/15 23:42
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ConsulOrderMain80 {
+public class ConsumerConsulMain80 {
     public static void main(String[] args) {
-        SpringApplication.run(ConsulOrderMain80.class, args);
+        SpringApplication.run(ConsumerConsulMain80.class, args);
     }
 }
