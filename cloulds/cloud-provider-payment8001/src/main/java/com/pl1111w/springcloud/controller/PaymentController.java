@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @title: pl1111w
@@ -49,7 +50,7 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("***查询结果：" + payment);
         if (payment != null) {
-            return new CommonResult(200, "查询数据成功,serverport:" + SERVER_PORT, payment);
+            return new CommonResult(200, "查询数据成功,serverPort:" + SERVER_PORT, payment);
         } else {
             return new CommonResult(444, "没有对应记录", null);
         }
@@ -71,5 +72,16 @@ public class PaymentController {
     @GetMapping("/lb")
     public CommonResult lb() {
         return new CommonResult(200,SERVER_PORT,null);
+    }
+
+    @GetMapping(value = "/feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            // 暂停3秒钟
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return SERVER_PORT;
     }
 }
