@@ -1,13 +1,17 @@
 package com.pl1111w.springcloud.controller;
 
+import com.pl1111w.springcloud.config.LoadBalance;
 import com.pl1111w.springcloud.entities.CommonResult;
 import com.pl1111w.springcloud.entity.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @title: pl1111w
@@ -22,6 +26,12 @@ public class OrderController {
 
     //private static final String URL = "http://localhost:8001/";
     private static final String URL = "http://CLOUD-PAYMENT-SERVICE/";
+
+    @Resource
+    private DiscoveryClient discoveryClient;
+
+    @Resource
+    private LoadBalance loadBalance;
 
     @Resource
     private RestTemplate restTemplate;
@@ -47,5 +57,12 @@ public class OrderController {
         } else {
             return new CommonResult<>(000, "failed");
         }
+    }
+
+    @GetMapping("lb")
+    public CommonResult getIb() {
+        List<ServiceInstance> serviceInstances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        ServiceInstance instance = loadBalance.instances(serviceInstances);
+        return restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/payment/lb", CommonResult.class);
     }
 }

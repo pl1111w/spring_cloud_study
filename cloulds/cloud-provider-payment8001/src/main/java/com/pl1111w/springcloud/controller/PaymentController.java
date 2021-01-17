@@ -30,7 +30,7 @@ public class PaymentController {
     private EurekaDiscoveryClient eurekaDiscoveryClient;
 
     @Value("${server.port}")
-    private static final String SERVER_PORT = "success";
+    private String SERVER_PORT;
 
     @PostMapping("/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -66,5 +66,10 @@ public class PaymentController {
             log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
         }
         return eurekaDiscoveryClient.description();
+    }
+
+    @GetMapping("/lb")
+    public CommonResult lb() {
+        return new CommonResult(200,SERVER_PORT,null);
     }
 }

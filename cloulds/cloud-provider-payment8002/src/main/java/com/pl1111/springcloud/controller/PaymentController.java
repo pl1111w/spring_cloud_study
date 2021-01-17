@@ -23,7 +23,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @Value("${server.port}")
-    private static final String SERVER_PORT = "success";
+    private  String SERVER_PORT ;
 
     @PostMapping("/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -46,5 +46,10 @@ public class PaymentController {
         } else {
             return new CommonResult(444, "没有对应记录", null);
         }
+    }
+
+    @GetMapping("/lb")
+    public CommonResult lb() {
+        return new CommonResult(200,SERVER_PORT,null);
     }
 }
