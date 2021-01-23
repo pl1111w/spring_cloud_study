@@ -54,4 +54,18 @@ public class HystrixPaymentController {
         return result;
     }
 
+
+    /**
+     * 服务熔断
+     * http://localhost:8001/payment/circuit/1
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.circuitBreaker(id);
+        log.info("***result:" + result);
+        return result;
+    }
 }
