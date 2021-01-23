@@ -1,0 +1,31 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: cloud-consumer-hystrix-dashboard #服务名称
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+#    集群版eureka
+#       defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka
+#    单机版eureka
+       defaultZone: http://localhost:7001/eureka/
+
+turbine:
+#参数设置为true，可以让同一主机上的服务通过主机名与端口号的组合来进行区分，默认情况下会以host来区分不同的服务，这会使得在本机调试的时候，本机上的不同服务聚合成一个服务来统计
+  combine-host-port: true
+#  配置监控服务的列表，表明监控哪些服务多个使用","分割
+  app-config: cloud-provider-hystrix-payment
+#  用于指定集群名称，当服务数量非常多的时候，可以启动多个Turbine服务来构建不同的聚合集群，而该参数可以用来区分这些不同的聚合集群，同时该参数值可以再Hystrix仪表盘中用来定位不同的聚合集群，
+   #只需在Hystrix Stream的URL中通过cluster参数来指定
+   #当clusterNameExpression: metadata['cluster']时，
+   #假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，
+  #则需要配置，同时turbine.aggregator.clusterConfig: ABC
+  cluster-name-expression: "'default'"
+  aggregator:
+      cluster-config: default
+  instanceUrlSuffix: /hystrix.stream

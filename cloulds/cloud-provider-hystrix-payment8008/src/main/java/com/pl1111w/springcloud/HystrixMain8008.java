@@ -19,10 +19,10 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 @EnableEurekaClient
 @EnableCircuitBreaker
-public class HystrixMain8007 {
+public class HystrixMain8008 {
 
     public static void main(String[] args) {
-        SpringApplication.run(HystrixMain8007.class, args);
+        SpringApplication.run(HystrixMain8008.class, args);
     }
 
     /**
