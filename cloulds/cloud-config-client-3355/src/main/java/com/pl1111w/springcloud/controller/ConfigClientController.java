@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @title: pl1111w
- * @description: crul -X POST "http://localhost:3355/actuator/refresh"
+ * @description: curl -X POST "http://localhost:3355/actuator/refresh"
  * @author: Kris
  * @date 2021/1/26 22:49
  */
