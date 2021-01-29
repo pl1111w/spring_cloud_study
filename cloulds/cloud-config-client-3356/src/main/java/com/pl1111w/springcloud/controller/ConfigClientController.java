@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @title: pl1111w
  * @description: curl -X POST "http://localhost:3355/actuator/refresh"
- *               curl -X POST "http://localhost:3344/actuator/bus-refresh/cloud-config-client:3355"
- *               curl -X POST "http://localhost:3344/actuator/bus-refresh"
  * @author: Kris
  * @date 2021/1/26 22:49
  */
