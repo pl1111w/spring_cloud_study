@@ -65,4 +65,11 @@ public class OrderController {
         ServiceInstance instance = loadBalance.instances(serviceInstances);
         return restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/payment/lb", CommonResult.class);
     }
+
+    @GetMapping("zipkin")
+    public String getzipkin() {
+        List<ServiceInstance> serviceInstances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        ServiceInstance instance = loadBalance.instances(serviceInstances);
+        return restTemplate.getForObject("http://" + instance.getHost() + ":" + instance.getPort() + "/payment/zipkin", String.class);
+    }
 }
