@@ -1,0 +1,17 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: cloud-nacos-config #服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+
+#DataId 配置规则  prex:默认为：spring.application.name 也可以通过spring.cloud.nacos.config.prefixl来配置
+# ${prex}-${spring.profile-active}.${spring.cloud.nacos.config.file-extension}
+# cloud-nacos-config-dev.yaml
