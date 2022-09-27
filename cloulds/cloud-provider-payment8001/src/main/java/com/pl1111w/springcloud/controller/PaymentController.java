@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
  * @date 2021/1/6 22:28
  */
 @RestController
-@Slf4j
 @RequestMapping("/payment")
+@Slf4j
 public class PaymentController {
 
     @Autowired
