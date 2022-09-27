@@ -28,7 +28,7 @@ public class OrderController {
     private static final String URL = "http://CLOUD-PAYMENT-SERVICE/";
 
     @Resource
-    //discoveryClient 获取注册到eureka 的服务端信息
+    //discoveryClient 服务信息
     private DiscoveryClient discoveryClient;
 
     @Resource
