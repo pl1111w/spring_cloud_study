@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableDiscoveryClient
+@EnableDiscoveryClient//可以获取注册到eureka服务的信息 例如：ip 端口
 public class PaymentMain8001 {
 
     public static void main(String[] args) {
