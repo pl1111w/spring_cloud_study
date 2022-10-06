@@ -11,7 +11,7 @@ eureka:
 #       单机版指向自己
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 #       集群指向其他eureka
-       defaultZone: http://eureka7002.com:7002/eureka/
+       defaultZone: http://localhost:7002/eureka/
 
 #自我保护机制(默认：true)
 #  server:

@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 /**
+ * eureka jar包包含了ribbon
  * 对于Ribbon的配置必须用@Configuration注解标识，
  * 并且不能被@Component注解或者@SpringBootApplication
  * （因为里面包含了@ComponentScan）扫描到。

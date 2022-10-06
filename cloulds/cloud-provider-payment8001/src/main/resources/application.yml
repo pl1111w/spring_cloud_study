@@ -14,7 +14,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
-    password: root123
+    password: Weixb4818
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true   #ip显示
 eureka:
   client:
     register-with-eureka: true
@@ -24,9 +27,6 @@ eureka:
        defaultZone: http://localhost:7001/eureka/, http://localhost:7002/eureka/
 #    单机版eureka
 #       defaultZone: http://localhost:7001/eureka/
-#  instance:
-#    instance-id: payment8001
-#    prefer-ip-address: true   #ip显示
 #    #默认向注册中心发送心跳的时间30s(默认)
 #    lease-expiration-duration-in-seconds: 1
 #    #注册中心等待发送心跳的时间90s(默认)

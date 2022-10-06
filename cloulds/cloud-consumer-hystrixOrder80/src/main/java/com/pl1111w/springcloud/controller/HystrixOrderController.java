@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/consumer")
-//@DefaultProperties(defaultFallback = "paymentTimeOutFallbackMethod")
+/*//【服务降级2.0 配置统一服务降级方法 避免代码膨胀
+@DefaultProperties(defaultFallback = "paymentGlobalFallbackMethod")*/
 public class HystrixOrderController {
 
     @Autowired
@@ -44,12 +45,17 @@ public class HystrixOrderController {
      * @return
      */
     @GetMapping("/payment/hystrix/timeout/{id}")
-//    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
-//            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
-//    })
-//    @HystrixCommand
+   /*
+   //【服务降级1.0 为单独的请求配置fallBack方法,存在代码膨胀，以及降级代码与业务代码耦合的问题】
+    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
+    })*/
+
+
+ /*   @HystrixCommand
+    //【服务降级2.0 配置统一服务降级方法 避免代码膨胀*/
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
-//        int age = 10 / 0;
+//        int age = 10 / 0;  //服务降级1.0 2.0可以客户端错误
         return hystrixConsumerService.paymentInfo_TimeOut(id);
     }
 
@@ -57,7 +63,7 @@ public class HystrixOrderController {
         return "消费  者80，对方支付系统繁忙，或自己运行出错请检查自己，请10秒后再试。";
     }
 
-    private String paymentTimeOutFallbackMethod() {
+    private String paymentGlobalFallbackMethod() {
         return "消费者80，对方支付系统繁忙，或自己运行出错，请稍后再试。";
     }
 

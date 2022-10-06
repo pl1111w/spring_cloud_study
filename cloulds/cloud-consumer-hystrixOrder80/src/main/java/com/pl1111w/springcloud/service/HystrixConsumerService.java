@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @Component
 @FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = HystrixFallbackService.class)
+//【服务降级3.0 解决调用超时问题，但不能解决自身代码问题
 public interface HystrixConsumerService {
 
     /**

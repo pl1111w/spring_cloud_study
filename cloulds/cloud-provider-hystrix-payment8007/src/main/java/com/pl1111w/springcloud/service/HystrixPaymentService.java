@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @title: pl1111w
- * @description: TODO
+ * @description: 服务降级与服务熔断
  * @author: Kris
  * @date 2021/1/19 22:45
  */
@@ -21,10 +21,9 @@ public class HystrixPaymentService {
      * 正常访问
      *
      * @param id
-     * @return
      */
     public String paymentInfo_OK(Integer id) {
-        return "线程池：" + Thread.currentThread().getName() + "paymentinfo_ok,id:" + id + "\t";
+        return "线程池：" + Thread.currentThread().getName() + "payment-info_ok,id:" + id + "\t";
     }
 
     //    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler", commandProperties = {
@@ -38,7 +37,7 @@ public class HystrixPaymentService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "线程池：" + Thread.currentThread().getName() + "paymentinfo_Timeout,id:" + id + "\t" + "耗时(秒)" + timeNumber;
+        return "线程池：" + Thread.currentThread().getName() + "payment-info_Timeout,id:" + id + "\t" + "耗时(秒)" + timeNumber;
     }
 
     private String paymentInfo_TimeOutHandler(Integer id) {

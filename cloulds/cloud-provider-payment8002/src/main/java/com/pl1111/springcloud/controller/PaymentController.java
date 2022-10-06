@@ -33,7 +33,7 @@ public class PaymentController {
         log.info("插入数据的ID:\t" + payment.getId());
         log.info("插入结果：" + result);
         if (result > 0) {
-            return new CommonResult(200, "插入数据成功,serverport:" + SERVER_PORT, result);
+            return new CommonResult(200, "插入数据成功,server-port:" + SERVER_PORT, result);
         } else {
             return new CommonResult(444, "插入数据失败", null);
         }

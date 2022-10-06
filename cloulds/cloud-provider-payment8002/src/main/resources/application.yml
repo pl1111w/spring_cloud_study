@@ -10,7 +10,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
-    password: root123
+    password: Weixb4818
+
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true   #ip显示
 eureka:
   client:
     register-with-eureka: true
