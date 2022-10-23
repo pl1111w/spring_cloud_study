@@ -8,8 +8,8 @@ spring:
     config:
         uri: http://localhost:3344
         name: config  #配置文件名称
-        label: master
-        profile: sit  #读取分支
+        label: master #读取分支
+        profile: sit
 eureka:
   client:
     register-with-eureka: true

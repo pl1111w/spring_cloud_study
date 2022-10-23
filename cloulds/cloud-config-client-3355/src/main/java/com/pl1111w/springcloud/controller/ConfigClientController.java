@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @title: pl1111w
- * @description: curl -X POST "http://localhost:3355/actuator/refresh"
- *               curl -X POST "http://localhost:3344/actuator/bus-refresh/cloud-config-client:3355"
- *               curl -X POST "http://localhost:3344/actuator/bus-refresh"
+ * @description: 引入bus前：curl -X POST "http://localhost:3355/actuator/refresh"
+ *               引入bus后-指定通知【3355】：curl -X POST "http://localhost:3344/actuator/bus-refresh/cloud-config-client:3355"
+ *               引入bus后-全部通知（3355，3366）：curl -X POST "http://localhost:3344/actuator/bus-refresh"
  * @author: Kris
  * @date 2021/1/26 22:49
  */

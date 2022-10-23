@@ -7,9 +7,9 @@ spring:
   cloud:
     config:
         uri: http://localhost:3344
-        name: config  #配置文件名称
-        label: master
-        profile: sit  #读取分支
+        name: config  #配置文件(项目)名称
+        label: master  #读取分支
+        profile: sit     #url+label+name+profile  http://localhost:3344/master/config-sit.yml
 eureka:
   client:
     register-with-eureka: true

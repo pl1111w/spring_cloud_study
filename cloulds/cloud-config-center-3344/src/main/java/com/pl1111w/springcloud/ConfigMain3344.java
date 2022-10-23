@@ -9,6 +9,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @description: 配置中心启动类
  * @author: Kris
  * @date 2021/1/26 21:05
+ * 访问地址进行验证：http://localhost:3344/master/config-prod.yml
  */
 @SpringBootApplication
 @EnableConfigServer
