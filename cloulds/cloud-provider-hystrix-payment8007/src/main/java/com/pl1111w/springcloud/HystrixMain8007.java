@@ -27,10 +27,10 @@ public class HystrixMain8007 {
 
     /**
      * 此配置是为了服务监控而配置，与服务容错本身无观，springCloud 升级之后的坑
-     * ServletRegistrationBean因为springboot的默认路径不是/hystrix.stream
+     * ServletRegistrationBean因为spring-boot的默认路径不是/hystrix.stream
      * 只要在自己的项目中配置上下面的servlet即可
      *
-     * @return
+     * @return http://localhost:8007/hystrix.stream
      */
     @Bean
     public ServletRegistrationBean getServlet() {
