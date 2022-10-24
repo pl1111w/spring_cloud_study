@@ -9,7 +9,7 @@ spring:
       server:
         git:
           uri: https://github.com/pl1111w/config.git
-          search-paths: prod,sit  #读取文件夹
+          search-paths: prod,uat,sit  #扫描文件夹  uat sit配置相同名字的配置文件，后面文件夹的配置文件会覆盖前面的
       label: mater   #读取分支
 eureka:
   client:
