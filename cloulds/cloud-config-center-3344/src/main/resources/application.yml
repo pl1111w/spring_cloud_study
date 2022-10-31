@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: cloud-config-server #服务名称
+  rabbitmq:
+    host: yourIp
+    port: 5672
+    username: admin
+    password: 123456
   cloud:
     config:
       server:
@@ -11,17 +16,21 @@ spring:
           uri: https://github.com/pl1111w/config.git
           search-paths: prod,uat,sit  #扫描文件夹  uat sit配置相同名字的配置文件，后面文件夹的配置文件会覆盖前面的
       label: mater   #读取分支
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+      bindings:
+        output:
+          destination: studyExchange
+          content-type: application/json
+          binder: defaultRabbit
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
        defaultZone: http://localhost:7001/eureka
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
 # 暴露bus刷新配置的端点
 management:
   endpoints:
