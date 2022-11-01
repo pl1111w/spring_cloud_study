@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/1/30 16:14
  */
 @RestController
-public class SendMeaageController {
+public class SendMessageController {
 
     @Autowired
     private IMessageProvider provider;
