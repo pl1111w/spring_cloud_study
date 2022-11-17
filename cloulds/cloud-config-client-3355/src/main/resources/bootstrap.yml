@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-config-client #服务名称
+    name: cloud-com.pl1111w.springcloud.config-client #服务名称
   rabbitmq: #rabbitmq相关配置，15672是web管理端口，5672是mq访问端口
     port: 5672
     host: yourIp
@@ -12,7 +12,7 @@ spring:
   cloud:
     config:
         uri: http://localhost:3344
-        name: config  #配置文件(项目)名称
+        name: com.pl1111w.springcloud.config  #配置文件(项目)名称
         label: master  #读取分支
         profile: sit     #url+label+name+profile  http://localhost:3344/master/config-sit.yml
     stream:

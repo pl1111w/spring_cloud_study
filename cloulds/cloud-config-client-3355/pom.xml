@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-config-client-3355</artifactId>
+    <artifactId>cloud-com.pl1111w.springcloud.config-client-3355</artifactId>
 
     <dependencies>
         <!--bus总控 整合RabbitMQ-->
@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
+            <artifactId>spring-cloud-com.pl1111w.springcloud.config-client</artifactId>
         </dependency>
         <!--eureka-server-->
         <dependency>

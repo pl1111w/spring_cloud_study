@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-config-server #服务名称
+    name: cloud-com.pl1111w.springcloud.config-server #服务名称
   rabbitmq:
     host: yourIp
     port: 5672
@@ -13,7 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/pl1111w/config.git
+          uri: https://github.com/pl1111w/com.pl1111w.springcloud.config.git
           search-paths: prod,uat,sit  #扫描文件夹  uat sit配置相同名字的配置文件，后面文件夹的配置文件会覆盖前面的
       label: mater   #读取分支
     stream:

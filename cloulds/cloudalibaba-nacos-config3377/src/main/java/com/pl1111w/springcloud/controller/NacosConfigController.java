@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 public class NacosConfigController {
 
-    @Value("${config.info}")
+    @Value("${com.pl1111w.springcloud.config.info}")
     private String configInfo;
 
-    @GetMapping("/config/info")
+    @GetMapping("/com.pl1111w.springcloud.config/info")
     public String getConfigInfo() {
         return configInfo;
     }

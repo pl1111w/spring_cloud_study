@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-nacos-config #服务名称
+    name: cloud-nacos-com.pl1111w.springcloud.config #服务名称
   cloud:
     nacos:
       discovery:
@@ -13,12 +13,12 @@ spring:
         file-extension: yaml
 
 #DataId 配置规则  prex:默认为：spring.application.name
-# 也可以通过spring.cloud.nacos.config.prefixl来配置
+# 也可以通过spring.cloud.nacos.com.pl1111w.springcloud.config.prefixl来配置
 
-# 规则： ${prex}-${spring.profile-active}.${spring.cloud.nacos.config.file-extension}
+# 规则： ${prex}-${spring.profile-active}.${spring.cloud.nacos.com.pl1111w.springcloud.config.file-extension}
 
-# spring.application.name= cloud-nacos-config
+# spring.application.name= cloud-nacos-com.pl1111w.springcloud.config
 # spring.profile-active = dev.yaml
-# spring.cloud.nacos.config.file-extension=yaml
+# spring.cloud.nacos.com.pl1111w.springcloud.config.file-extension=yaml
 
-#nacos 最终配置文件名：cloud-nacos-config-dev.yaml
+#DataId：cloud-nacos-com.pl1111w.springcloud.config-dev.yaml
