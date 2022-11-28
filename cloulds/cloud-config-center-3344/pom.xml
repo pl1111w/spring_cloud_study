@@ -19,7 +19,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-com.pl1111w.springcloud.config-server</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
         <!--eureka-server-->
         <dependency>
