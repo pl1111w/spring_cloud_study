@@ -8,6 +8,8 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+      config:
+        group: SEATA_GROUP
   datasource:
     # 当前数据源操作类型
     type: com.alibaba.druid.pool.DruidDataSource
@@ -41,9 +43,10 @@ seata:
     nacos:
       application: seata-server
       server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
       #namespace:    #2.2中配置所在命名空间ID，入未配置 默认public空间
       userName: nacos
       password: nacos
   service:
-    vgroup-mapping:
-      my_test_tx_group: default    #这里要特别注意和nacos中配置的要保持一直
+    vgroupMapping:
+      my_test_tx_group : default    #这里要特别注意和nacos中配置的要保持一直
