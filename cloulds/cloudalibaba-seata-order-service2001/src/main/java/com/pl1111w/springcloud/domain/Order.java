@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 20:25
  */
 @Data

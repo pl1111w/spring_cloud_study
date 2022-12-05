@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.math.BigDecimal;
 
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 22:09
  */
 public interface AccountService {

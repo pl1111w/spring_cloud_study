@@ -17,7 +17,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import javax.sql.DataSource;
 
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 21:26
  */
 @Configuration

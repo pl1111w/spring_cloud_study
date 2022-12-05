@@ -2,7 +2,7 @@ package com.pl1111w.springcloud.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 21:47
  */
 @Mapper

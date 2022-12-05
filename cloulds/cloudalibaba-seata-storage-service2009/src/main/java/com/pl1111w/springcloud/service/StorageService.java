@@ -1,6 +1,6 @@
 package com.pl1111w.springcloud.service;
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 21:51
  */
 public interface StorageService {

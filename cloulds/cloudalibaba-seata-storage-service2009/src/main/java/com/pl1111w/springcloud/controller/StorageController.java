@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 21:55
  */
 @RestController

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 21:00
  */
 @FeignClient(value = "seata-storage-service")

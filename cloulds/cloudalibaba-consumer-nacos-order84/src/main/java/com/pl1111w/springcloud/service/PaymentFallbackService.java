@@ -4,7 +4,7 @@ import com.pl1111w.springcloud.entity.Payment;
 import org.springframework.stereotype.Component;
 
 /**
- * @author wsk
+ * 
  * @date 2020/3/25 9:06
  */
 @Component
